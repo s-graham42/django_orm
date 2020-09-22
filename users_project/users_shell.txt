@@ -1,0 +1,93 @@
+Dojo Users (shell) Assignment
+//Run the shell and import your User model:
+
+from users.models import *
+
+//Query: Create 3 new users:
+
+Users.objects.create(first_name="Russell", last_name="Wilson", email_address="russ@qb4life.com", age=31)
+    Out[2]: <Users: Users object (1)>
+Users.objects.create(first_name="DK", last_name="Metcalf", email_address="dkwr@gr8catches.com", age=22)
+    Out[3]: <Users: Users object (2)>
+Users.objects.create(first_name="Chris", last_name="Carson", email_address="truckin@iformation.com", age=26)
+    Out[4]: <Users: Users object (3)>
+
+//Query: Retrieve all the users:
+
+Users.objects.all()
+    Out[5]: 
+    <QuerySet [
+    || <Users object: (1) Russell Wilson, russ@qb4life.com, 31 years old.>,
+    || <Users object: (2) DK Metcalf, dkwr@gr8catches.com, 22 years old.>,
+    || <Users object: (3) Chris Carson, truckin@iformation.com, 26 years old.>]>
+
+//Query: Retrieve the last user:
+
+Users.objects.last()
+    Out[6]: 
+    || <Users object: (3) Chris Carson, truckin@iformation.com, 26 years old.>
+
+//Query: Retrieve the first user:
+
+Users.objects.first()
+    Out[7]: 
+    || <Users object: (1) Russell Wilson, russ@qb4life.com, 31 years old.>
+
+
+            ***  added a couple more for more interesting sorting ***
+
+
+Users.objects.create(first_name="Nick", last_name="Bellore", email_address="nicky@followme.com", age=31)
+    Out[8]: 
+    || <Users object: (4) Nick Bellore, nicky@followme.com, 31 years old.>
+Users.objects.create(first_name="Tyler", last_name="Lockett", email_address="ty16@wideopen.com", age=27)
+    Out[9]: 
+    || <Users object: (5) Tyler Lockett, ty16@wideopen.com, 27 years old.>
+
+
+            ***  back to the assignment ***
+
+//Query: Change the user with id=3 so their last name is Pancakes.:
+
+pancakes = Users.objects.get(id=3)
+pancakes.last_name = "Pancakes"
+pancakes.save()
+
+Users.objects.get(id=3)
+    Out[13]: 
+    || <Users object: (3) Chris Pancakes, truckin@iformation.com, 26 years old.>
+
+//Query: Delete the user with id=2 from the database:
+
+getridofit = Users.objects.get(id=2)
+getridofit.delete()
+    Out[15]: (1, {'users.Users': 1})
+
+Users.objects.all()
+    Out[16]: 
+    <QuerySet [
+    || <Users object: (1) Russell Wilson, russ@qb4life.com, 31 years old.>,
+    || <Users object: (3) Chris Pancakes, truckin@iformation.com, 26 years old.>,
+    || <Users object: (4) Nick Bellore, nicky@followme.com, 31 years old.>,
+    || <Users object: (5) Tyler Lockett, ty16@wideopen.com, 27 years old.>]>
+
+//Query: Get all the users, sorted by their first name:
+
+Users.objects.all().order_by("first_name")
+    Out[17]: 
+    <QuerySet [
+    || <Users object: (3) Chris Pancakes, truckin@iformation.com, 26 years old.>,
+    || <Users object: (4) Nick Bellore, nicky@followme.com, 31 years old.>,
+    || <Users object: (1) Russell Wilson, russ@qb4life.com, 31 years old.>,
+    || <Users object: (5) Tyler Lockett, ty16@wideopen.com, 27 years old.>]>
+
+//BONUS Query: Get all the users, sorted by their first name in descending order:
+
+Users.objects.all().order_by("-first_name")
+    Out[18]: 
+    <QuerySet [
+    || <Users object: (5) Tyler Lockett, ty16@wideopen.com, 27 years old.>,
+    || <Users object: (1) Russell Wilson, russ@qb4life.com, 31 years old.>,
+    || <Users object: (4) Nick Bellore, nicky@followme.com, 31 years old.>,
+    || <Users object: (3) Chris Pancakes, truckin@iformation.com, 26 years old.>]>
+
