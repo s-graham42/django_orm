@@ -11,3 +11,4 @@ class Users(models.Model):
 
     def __repr__(self):
         return f"\n|| <Users object: ({self.id}) {self.first_name} {self.last_name}, {self.email_address}, {self.age} years old.>"
+

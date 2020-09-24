@@ -91,3 +91,6 @@ Users.objects.all().order_by("-first_name")
     || <Users object: (4) Nick Bellore, nicky@followme.com, 31 years old.>,
     || <Users object: (3) Chris Pancakes, truckin@iformation.com, 26 years old.>]>
 
+
+            *** Assignment Complete ***
+            
