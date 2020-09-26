@@ -48,7 +48,7 @@
             <h1>All the Dojos</h1>
             <ul class="dojoList">
                 {% for dojo in all_dojos %}
-                <li><strong>Ninjas in the {{ dojo.name }} dojo</strong>
+                <li><strong>Ninjas in the {{ dojo.name }} dojo.  ({{ dojo.ninjas.all|length }})</strong>
                     <form id="delDojoForm" action="/delete_a_dojo" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="dojoDelete" value={{dojo.id}}>
