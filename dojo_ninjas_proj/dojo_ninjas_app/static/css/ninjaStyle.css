@@ -1,0 +1,87 @@
+/* Minimalist plus borders and outlines */
+* {
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: lightgray;
+}
+.mainwrapper {
+    width: 1200px;
+    margin: 10px auto;
+    border: 2px solid grey;
+    background-color: white;
+}
+section#adding {
+    padding: 10px 5%;
+}
+h1 {
+    text-align: center;
+    line-height: 100px;
+}
+.addingForm {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    height: 400px;
+    padding: 0px 2%;
+    border: 1px solid grey;
+}
+label {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 20px;
+    width: 40%;
+    text-align: left;
+    font-size: 1.3em;
+}
+input, select, textarea {
+    display: inline-block;
+    padding: 5px 10px;
+    width: 40%;
+    text-align: left;
+    font-size: 1.1em;
+    border: 2px solid grey;
+}
+.addButton {
+    display: block;
+    margin: 20px auto;
+    width: 20%;
+    text-align: center;
+}
+.line {
+    width: 80%;
+    margin: 50px auto 10px;
+    border-top: 3px solid black;
+    border-radius: 50%;
+}
+.dojoList {
+    width: 35%;
+    margin: 0 auto;
+    line-height: 30px;
+    font-size: 1.2em;
+}
+#listArea ul {
+    list-style-type: none;
+}
+#listArea ul ul {
+    margin: 0 0 20px 50px;
+    list-style-type: circle;
+}
+#delDojoForm {
+    line-height: 0px;
+}
+.deleteButton {
+    font-size: 0.6em;
+    width: 90px;
+    margin-left: 75%;
+    margin-top: -10px;
+    text-align: center;
+    border-radius: 25%;
+    line-height: 8px;
+    vertical-align: top;
+}

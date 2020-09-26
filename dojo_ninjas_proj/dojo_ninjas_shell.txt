@@ -1,0 +1,97 @@
+**** Dojo & Ninjas (Shell) Assignment ****
+
+In [1]: from dojo_ninjas_app.models import *
+
+        -- Query: Create 3 new dojos --
+
+In [2]: firstDojo = Dojo.objects.create(name="Spring Mountain", city="Albequerque", state="NM")
+
+In [3]: secondDojo = Dojo.objects.create(name="Clear Lake", city="White Sands", state="NY")
+
+In [4]: thirdDojo = Dojo.objects.create(name="Great Oak", city="Houston", state="TX")
+
+        -- Query: Delete the 3 dojos you just created --
+
+In [5]: dojos_to_delete = Dojo.objects.all()
+
+In [6]: Dojo.objects.all()
+Out[6]: <QuerySet [<Dojo: Dojo object (1)>, <Dojo: Dojo object (2)>, <Dojo: Dojo object (3)>]>
+
+In [7]: dojos_to_delete.delete()
+Out[7]: (3, {'dojo_ninjas_app.Ninja': 0, 'dojo_ninjas_app.Dojo': 3})
+
+In [8]: Dojo.objects.all()
+Out[8]: <QuerySet []>
+
+        -- Query: Create 3 more dojos --
+
+In [9]: fourthDojo = Dojo.objects.create(name="Great Winds", city="Fargo", state="ND")
+
+In [10]: fifthDojo = Dojo.objects.create(name="Low Sands", city="Palm Springs", state="CA")
+
+In [11]: sixthDojo = Dojo.objects.create(name="Flash and Trash", city="Reno", state="NV")
+
+        -- Query: Create 3 ninjas that belong to the first dojo --
+
+In [12]: firstNinja = Ninja.objects.create(dojo = fourthDojo, first_name = "Shino", last_name = "Aburame")
+
+In [13]: seondNinja = Ninja.objects.create(dojo = fourthDojo, first_name = "Kiba", last_name = "Inuzuka")
+
+In [14]: thirdNinja = Ninja.objects.create(dojo = fourthDojo, first_name = "Hinata", last_name = "Hyuga")
+
+        -- Query: Create 3 ninjas that belong to the second dojo --
+
+In [15]: fourthNinja = Ninja.objects.create(dojo = fifthDojo, first_name = "Shikamaru", last_name = "Nara")
+
+In [16]: fifthNinja = Ninja.objects.create(dojo = fifthDojo, first_name = "Ino", last_name = "Yamanaka")
+
+In [17]: sixthNinja = Ninja.objects.create(dojo = fifthDojo, first_name = "Choji", last_name = "Akimichi")
+
+        -- Query: Create 3 ninjas that belong to the third dojo --
+
+In [18]: seventhNinja = Ninja.objects.create(dojo = fifthDojo, first_name = "Naruto", last_name = "Uzumaki")
+
+In [19]: eighthNinja = Ninja.objects.create(dojo = sixthDojo, first_name = "Sakura", last_name = "Haruno")
+
+In [20]: seventhNinja.dojo = sixthDojo
+
+In [21]: ninthNinja = Ninja.objects.create(dojo = sixthDojo, first_name = "Sasuke", last_name = "Uchiha")
+
+        -- Query: Retrieve all the ninjas from the first dojo --
+
+In [25]: Dojo.objects.first().ninjas
+Out[25]: <django.db.models.fields.related_descriptors.create_reverse_many_to_one_manager.<locals>.RelatedManager at 0x179bdd8>
+
+In [26]: firstDojo.name
+Out[26]: 'Great Winds'
+
+In [27]: wind_ninjas = Dojo.objects.first().ninjas
+
+In [28]: wind_ninjas.all()
+Out[28]: <QuerySet [<Ninja: Ninja object (1)>, <Ninja: Ninja object (2)>, <Ninja: Ninja object (3)>]>
+
+        -- Query: Retrieve all the ninjas from the last dojo --
+
+In [48]: flash_ninjas = Dojo.objects.last().ninjas
+
+In [49]: flash_ninjas.all()
+Out[49]: <QuerySet [<Ninja: Ninja object (8)>, <Ninja: Ninja object (9)>, <Ninja: Ninja object (10)>]>
+
+        -- Query: Retrieve the last ninja's dojo --
+
+In [50]: Ninja.objects.last().dojo
+Out[50]: <Dojo: Dojo object (6)>
+
+        -- Add a new text field called "desc" to your Dojo class --
+
+In [51]: exit()
+
+        -- Create and run the migration files to update the table in your database. --
+        -- If needed, provide a default value of "old dojo" --
+        -- Query: Create a new dojo --
+
+In [1]: from dojo_ninjas_app.models import *
+
+seventhDojo = Dojo.objects.create(name="Hidden Leaf", city="Konohagakure", state="KI", desc="New Dojo")
+
+        -- Submit your .txt file that contains all the queries you ran in the shell --
