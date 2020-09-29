@@ -22,11 +22,13 @@ body {
     vertical-align: top;
     border: 1px solid grey;
 }
-h1 {
+h1, h2, .indexLink {
     display: block;
     text-align: center;
-    margin:20px 0;
+    margin: 20px 0;
+    font-size: 2em;
 }
+
 label {
     display: inline-block;
     vertical-align: top;
@@ -97,9 +99,20 @@ select {
     border: 2px solid grey;
     display: inline-block;
 }
-#addButton{
+#addButton {
     display: inline-block;
     vertical-align: top;
     margin: 10px;
     width: 10%;
+}
+#home {
+    display: block;
+    margin: 20px auto;
+    width: 15%;
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid grey;
 }
